@@ -1,5 +1,5 @@
 {
-  "name": "zvonimirko-components",
+  "name": "@Zvonimirko/react-components-template",
   "version": "0.0.1",
   "description": "A react component template",
   "scripts": {
@@ -26,17 +26,5 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/Zvonimirko"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Zvonimirko/react-components-template.git"
-  },
-  "keywords": [
-    "react",
-    "components"
-  ],
-  "bugs": {
-    "url": "https://github.com/Zvonimirko/react-components-template/issues"
-  },
-  "homepage": "https://github.com/Zvonimirko/react-components-template#readme"
+  }
 }
