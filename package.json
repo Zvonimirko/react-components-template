@@ -5,6 +5,10 @@
   "scripts": {
     "rollup": "rollup -c"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zvonimirko/react-components-template.git"
+  },
   "author": "Zvonimir",
   "license": "ISC",
   "devDependencies": {
@@ -23,8 +27,5 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/Zvonimirko"
-  }
+  "types": "dist/index.d.ts"
 }
