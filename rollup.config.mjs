@@ -1,9 +1,9 @@
-import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
 import json from '@rollup/plugin-json';
-import dts from 'rollup-plugin-dts';
+import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 import copy from 'rollup-plugin-copy';
+import dts from 'rollup-plugin-dts';
 
 import packageJson from './package.json' assert { type: 'json' };
 
@@ -24,12 +24,7 @@ export default [
     ],
     plugins: [
       resolve({
-        resolveOnly: [
-          'country-data',
-          'react-datepicker',
-          'react-phone-number-input',
-          'react-currency-input-field',
-        ],
+        resolveOnly: ['country-data', 'react-datepicker', 'react-phone-number-input', 'react-currency-input-field'],
       }),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
@@ -49,5 +44,8 @@ export default [
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
+    tsconfig: './tsconfig.json',
+    declaration: true,
+    declarationDir: 'dist',
   },
 ];
