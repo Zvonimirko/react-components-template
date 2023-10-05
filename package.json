@@ -1,9 +1,10 @@
 {
-  "name": "@init/init-components",
-  "version": "0.0.1",
-  "description": "A simple template for a custom React component library",
-  "publishConfig": {
-    "registry": "https://gitlab.init.hr/api/v4/projects/189/packages/npm/"
+  "name": "@zvonimirko/react-components-template",
+  "version": "0.0.4",
+  "description": "A react component template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zvonimirko/react-components-template.git"
   },
   "scripts": {
     "build": "rollup -c --failAfterWarnings",
@@ -69,5 +70,8 @@
   "types": "dist/index.d.ts",
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint --cache --fix"
+  },
+  "publishConfig": {
+    "registry:": "https://github.com/Zvonimirko"
   }
 }
