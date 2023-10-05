@@ -3,4 +3,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   center?: boolean;
   isLoading?: boolean;
   loadingComponent?: React.ReactNode;
+  icon?: JSX.Element;
+  badgeIcon?: JSX.Element;
+  label?: string;
+  fullWidth?: boolean;
+  typeColor?: 'success' | 'danger' | 'warning' | 'info';
 }

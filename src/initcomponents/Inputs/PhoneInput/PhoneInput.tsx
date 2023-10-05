@@ -2,7 +2,7 @@
 import clsx from 'clsx';
 import { useController } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
-import ReactPohoneInput from 'react-phone-number-input/input';
+import ReactPhoneInput from 'react-phone-number-input/input';
 import { PhoneInputProps } from './types';
 import { countries } from '../../const';
 
@@ -55,7 +55,7 @@ export const PhoneInput = ({
           {leadingComponent && leadingComponent}
         </div>
 
-        <ReactPohoneInput
+        <ReactPhoneInput
           type="text"
           className={twMerge(
             clsx(
