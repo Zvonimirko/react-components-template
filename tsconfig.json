@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    // Default
     "target": "es5",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "jsx": "react",
+
+    // Added
+    "jsx": "react-jsx",
     "module": "ESNext",
     "declaration": true,
     "declarationDir": "types",
@@ -14,5 +25,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
-  }
+  },
+  "include": ["src"]
 }

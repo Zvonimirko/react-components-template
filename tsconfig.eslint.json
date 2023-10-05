@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".eslintrc.js",
+    "tailwind.config.js",
+    "postcss.config.js",
+    ".prettierrc.js",
+    "ladle.config.mjs",
+    "rollup.config.js"
+  ]
+}
