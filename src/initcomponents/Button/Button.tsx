@@ -18,7 +18,7 @@ export const Button = ({
 }: ButtonProps) => (
   <button
     type="button"
-    disabled={disabled}
+    disabled={disabled || isLoading}
     className={twMerge(
       clsx(
         'inline-flex items-center rounded-md border border-transparent bg-indigo-600 font-medium',
