@@ -13,6 +13,8 @@ export const Pagination = ({ pagination, currentPage, pageClicked, pageSizeClick
     page: currentPage,
   });
   const { totalRows } = pagination;
+  console.log('pagination', pagination);
+  console.log('totalRows', totalRows);
 
   const showing = currentPage * pagination.pageSize - pagination.pageSize + 1;
   const to = useMemo(() => {
