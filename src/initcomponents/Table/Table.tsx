@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { Fragment, useEffect, useState } from 'react';
 
 import { twMerge } from 'tailwind-merge';
-import { Pagination } from './components/Pagination';
+import { Pagination } from '../Pagination';
 import { SortDirection, TableProps } from './types';
 
 export const Table = <T,>({

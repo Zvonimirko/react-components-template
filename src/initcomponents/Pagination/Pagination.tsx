@@ -3,15 +3,17 @@ import clsx from 'clsx';
 import { useMemo } from 'react';
 
 import { usePagination } from '@mantine/hooks';
-import { MetaData } from 'initcomponents/Table/types';
+
 import { Button } from 'initcomponents/Button';
-import { PageSize } from '../PageSize';
+import { PageSize } from 'initcomponents/PageSize';
+import { MetaData } from './types';
 
 export const Pagination = ({ pagination, currentPage, pageClicked, pageSizeClicked, rowsSelected }: Props) => {
   const { range } = usePagination({
     total: pagination.totalPages,
     page: currentPage,
   });
+  const { totalRows } = pagination;
 
   const showing = currentPage * pagination.pageSize - pagination.pageSize + 1;
   const to = useMemo(() => {
@@ -27,9 +29,9 @@ export const Pagination = ({ pagination, currentPage, pageClicked, pageSizeClick
       <div className="sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div className="flex items-center">
           <p className="text-sm text-gray-700 mr-4">
-            Showing <span className="font-medium">{showing ? (showing as any) : 0}</span> to&nbsp;
-            <span className="font-medium">{to ? (to as any) : 0}</span> of&nbsp;
-            <span className="font-medium">{pagination.totalRows ? (pagination.totalRows as any) : 0}</span> results
+            Showing <span className="font-medium">{{ showing } as any}</span> to&nbsp;
+            <span className="font-medium">{{ to } as any}</span> of&nbsp;
+            <span className="font-medium">{{ totalRows } as any}</span> results
           </p>
 
           <PageSize pageSize={pagination.pageSize} pageSizeClicked={pageSizeClicked} />
