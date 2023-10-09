@@ -9,4 +9,4 @@ export * from './Tabs';
 export * from './Toggle';
 export * from './const';
 export * from './types';
-export * from './Table';
+export * from './FileUpload';
