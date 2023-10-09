@@ -17,7 +17,7 @@ import { twMerge } from 'tailwind-merge';
 import { Pagination } from './components/Pagination';
 import { MetaData, SortDirection, TableColumn } from './types';
 
-export const BaseTable = <T,>({
+export const Table = <T,>({
   columns,
   data,
   isLoading,
