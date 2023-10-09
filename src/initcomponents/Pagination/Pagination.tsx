@@ -29,9 +29,9 @@ export const Pagination = ({ pagination, currentPage, pageClicked, pageSizeClick
       <div className="sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div className="flex items-center">
           <p className="text-sm text-gray-700 mr-4">
-            Showing <span className="font-medium">{`${showing}`}</span> to&nbsp;
-            <span className="font-medium">{`${to}`}</span> of&nbsp;
-            <span className="font-medium">{`${totalRows}`}</span> results
+            Showing <span className="font-medium">{`${JSON.stringify(showing)}`}</span> to&nbsp;
+            <span className="font-medium">{`${JSON.stringify(to)}`}</span> of&nbsp;
+            <span className="font-medium">{`${JSON.stringify(totalRows)}`}</span> results
           </p>
 
           <PageSize pageSize={pagination.pageSize} pageSizeClicked={pageSizeClicked} />
