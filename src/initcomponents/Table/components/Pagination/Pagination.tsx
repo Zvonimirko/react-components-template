@@ -12,7 +12,6 @@ export const Pagination = ({ pagination, currentPage, pageClicked, pageSizeClick
     total: pagination.totalPages,
     page: currentPage,
   });
-  const { totalRows } = pagination;
 
   const showing = currentPage * pagination.pageSize - pagination.pageSize + 1;
   const to = useMemo(() => {
@@ -28,9 +27,9 @@ export const Pagination = ({ pagination, currentPage, pageClicked, pageSizeClick
       <div className="sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div className="flex items-center">
           <p className="text-sm text-gray-700 mr-4">
-            Showing <span className="font-medium">{{ showing } as any}</span> to&nbsp;
-            <span className="font-medium">{{ to } as any}</span> of&nbsp;
-            <span className="font-medium">{{ totalRows } as any}</span> results
+            Showing <span className="font-medium">{showing ? (showing as any) : 0}</span> to&nbsp;
+            <span className="font-medium">{to ? (to as any) : 0}</span> of&nbsp;
+            <span className="font-medium">{pagination.totalRows ? (pagination.totalRows as any) : 0}</span> results
           </p>
 
           <PageSize pageSize={pagination.pageSize} pageSizeClicked={pageSizeClicked} />
