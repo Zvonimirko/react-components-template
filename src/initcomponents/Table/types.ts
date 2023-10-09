@@ -55,7 +55,6 @@ export type TableProps<T> = {
   paginationContext: PaginationContext;
   columns: TableColumn<T>[];
   query: UseQueryResult<DataWithMeta<T>, unknown>;
-  data: T[];
   currentPage?: number;
   outerLoading?: boolean;
   noDataText?: string;

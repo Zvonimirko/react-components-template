@@ -10,7 +10,6 @@ import { SortDirection, TableProps } from './types';
 
 export const Table = <T,>({
   columns,
-  data,
   paginationContext,
   noDataText,
   tableClassName,
@@ -35,10 +34,11 @@ export const Table = <T,>({
   const { data: collection, isInitialLoading } = query;
   const isLoading = isInitialLoading || outerLoading;
   const pagination = collection?.meta;
+  const collectionData = collection?.data ?? [];
 
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const table = useReactTable<T>({
-    data,
+    data: collectionData,
     columns,
     state: {
       rowSelection,
@@ -201,7 +201,7 @@ export const Table = <T,>({
         )}
       </div>
 
-      {data.length > 0 && pagination && currentPage && pageClicked && (
+      {collectionData.length > 0 && pagination && currentPage && pageClicked && (
         <Pagination
           currentPage={currentPage}
           pagination={pagination}
