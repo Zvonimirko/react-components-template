@@ -1,6 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
-import { useMemo } from 'react';
 
 import { usePagination } from '@mantine/hooks';
 
@@ -13,25 +12,24 @@ export const Pagination = ({ pagination, currentPage, pageClicked, pageSizeClick
     total: pagination.totalPages,
     page: currentPage,
   });
-  const { totalRows } = pagination;
 
-  const showing = currentPage * pagination.pageSize - pagination.pageSize + 1;
-  const to = useMemo(() => {
-    const calculatedTo = currentPage * pagination.pageSize;
-    if (calculatedTo > pagination.totalRows) {
-      return pagination.totalRows;
-    }
-    return calculatedTo;
-  }, [currentPage, pagination.pageSize, pagination.totalRows]);
+  // const showing = currentPage * pagination.pageSize - pagination.pageSize + 1;
+  // const to = useMemo(() => {
+  //   const calculatedTo = currentPage * pagination.pageSize;
+  //   if (calculatedTo > pagination.totalRows) {
+  //     return pagination.totalRows;
+  //   }
+  //   return calculatedTo;
+  // }, [currentPage, pagination.pageSize, pagination.totalRows]);
 
   return (
     <div className="bg-white px-4 py-3 flex items-center justify-between border-t rounded-b-lg border-gray-200 sm:px-6">
       <div className="sm:flex-1 sm:flex sm:items-center sm:justify-between">
         <div className="flex items-center">
           <p className="text-sm text-gray-700 mr-4">
-            Showing <span className="font-medium">{`${JSON.stringify(showing)}`}</span> to&nbsp;
-            <span className="font-medium">{`${JSON.stringify(to)}`}</span> of&nbsp;
-            <span className="font-medium">{`${JSON.stringify(totalRows)}`}</span> results
+            {/* Showing <span className="font-medium">{`${JSON.stringify(showing)}`}</span> to&nbsp;
+            <span className="font-medium">{`${JSON.stringify(to)}`}</span> of&nbsp; */}
+            <span className="font-medium">{`${JSON.stringify(pagination.totalRows)}`}</span> results
           </p>
 
           <PageSize pageSize={pagination.pageSize} pageSizeClicked={pageSizeClicked} />
