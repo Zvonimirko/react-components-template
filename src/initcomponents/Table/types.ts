@@ -1,4 +1,3 @@
-import { UseQueryResult } from '@tanstack/react-query';
 import { ColumnDef, Row, VisibilityState } from '@tanstack/react-table';
 
 export interface MetaData {
@@ -51,20 +50,24 @@ export interface PaginationContext {
   reset: () => void;
 }
 
-export interface TableProps<T> {
-  pagination: PaginationContext;
-  query: UseQueryResult<DataWithMeta<T>, unknown>;
+export type TableProps<T> = {
   columns: TableColumn<T>[];
+  data: T[];
+  currentPage?: number;
+  pagination?: MetaData;
+  isLoading?: boolean;
   noDataText?: string;
   tableClassName?: string;
   containerClassName?: string;
   columnVisibility?: VisibilityState;
   deselectAllTableRows?: boolean;
   rowsSelected?: number;
-  outerLoading?: boolean;
   onRowClick?: (row: T) => void;
+  pageClicked?: (newPage: number) => void;
+  pageSizeClicked?: (newPageSize: number) => void;
+  headerClicked?: (accessorKey: string, sortDirection: SortDirection) => void;
   renderSubComponent?: (props: { row: Row<T> }) => React.ReactElement;
   getRowCanExpand?: (row: Row<T>) => boolean;
   setSelectedRows?: (rows: string[]) => void;
   getRowId?: (originalRow: T, index: number, parent?: Row<T> | undefined) => string;
-}
+};
