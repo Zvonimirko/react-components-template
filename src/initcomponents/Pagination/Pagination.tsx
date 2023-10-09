@@ -29,7 +29,7 @@ export const Pagination = ({ pagination, currentPage, pageClicked, pageSizeClick
           <p className="text-sm text-gray-700 mr-4">
             {/* Showing <span className="font-medium">{`${JSON.stringify(showing)}`}</span> to&nbsp;
             <span className="font-medium">{`${JSON.stringify(to)}`}</span> of&nbsp; */}
-            <span className="font-medium">{`${JSON.stringify(pagination.totalRows)}`}</span> results
+            {/* <span className="font-medium">{`${JSON.stringify(pagination.totalRows)}`}</span> results */}
           </p>
 
           <PageSize pageSize={pagination.pageSize} pageSizeClicked={pageSizeClicked} />
