@@ -3,7 +3,7 @@
 import { ArrowSmallDownIcon, ArrowSmallUpIcon } from '@heroicons/react/24/solid';
 import { RowSelectionState, flexRender, getCoreRowModel, getExpandedRowModel, useReactTable } from '@tanstack/react-table';
 import clsx from 'clsx';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Pagination } from './components/Pagination';
 import { SortDirection, TableProps } from './types';
@@ -33,8 +33,8 @@ export const Table = <T,>({
   } = paginationContext;
   const { data: collection, isInitialLoading } = query;
   const isLoading = isInitialLoading || outerLoading;
-  const pagination = collection?.meta;
-  const collectionData = collection?.data ?? [];
+  const pagination = useMemo(() => collection?.meta, [collection]);
+  const collectionData = useMemo(() => collection?.data ?? [], [collection]);
 
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
   const table = useReactTable<T>({
