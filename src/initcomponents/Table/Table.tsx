@@ -1,21 +1,12 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { ArrowSmallDownIcon, ArrowSmallUpIcon } from '@heroicons/react/24/solid';
-import { UseQueryResult } from '@tanstack/react-query';
-import {
-  Row,
-  RowSelectionState,
-  VisibilityState,
-  flexRender,
-  getCoreRowModel,
-  getExpandedRowModel,
-  useReactTable,
-} from '@tanstack/react-table';
+import { RowSelectionState, flexRender, getCoreRowModel, getExpandedRowModel, useReactTable } from '@tanstack/react-table';
 import clsx from 'clsx';
 import { Fragment, useEffect, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Pagination } from './components/Pagination';
-import { DataWithMeta, PaginationContext, SortDirection, TableColumn } from './types';
+import { SortDirection, TableProps } from './types';
 
 export const Table = <T,>({
   columns,
@@ -222,24 +213,4 @@ export const Table = <T,>({
       )}
     </div>
   );
-};
-
-type TableProps<T> = {
-  paginationContext: PaginationContext;
-  columns: TableColumn<T>[];
-  query: UseQueryResult<DataWithMeta<T>, unknown>;
-  data: T[];
-  currentPage?: number;
-  outerLoading?: boolean;
-  noDataText?: string;
-  tableClassName?: string;
-  containerClassName?: string;
-  columnVisibility?: VisibilityState;
-  deselectAllTableRows?: boolean;
-  rowsSelected?: number;
-  onRowClick?: (row: T) => void;
-  renderSubComponent?: (props: { row: Row<T> }) => React.ReactElement;
-  getRowCanExpand?: (row: Row<T>) => boolean;
-  setSelectedRows?: (rows: string[]) => void;
-  getRowId?: (originalRow: T, index: number, parent?: Row<T> | undefined) => string;
 };
